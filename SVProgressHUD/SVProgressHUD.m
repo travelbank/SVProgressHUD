@@ -651,11 +651,11 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     double animationDuration = 0.0;
 
 #if !defined(SV_APP_EXTENSIONS) && TARGET_OS_IOS
-  if (self.containerView) {
-    self.frame = self.containerView.bounds;
-  } else {
-    self.frame = [[[UIApplication sharedApplication] delegate] window].bounds;
-  }
+    if (self.containerView) {
+      self.frame = self.containerView.bounds;
+    } else {
+      self.frame = [[[UIApplication sharedApplication] delegate] window].bounds;
+    }
     UIInterfaceOrientation orientation = UIApplication.sharedApplication.statusBarOrientation;
 #elif !defined(SV_APP_EXTENSIONS) && !TARGET_OS_IOS
     self.frame= [UIApplication sharedApplication].keyWindow.bounds;
